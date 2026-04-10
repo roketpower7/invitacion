@@ -6,6 +6,30 @@
     <title>Invitación Gender Reveal</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <style>
+        /* --- ESTILOS PARA TEXTOS SEPARADOS --- */
+        .texto-izq {
+            display: flex;
+            align-items: left;
+            margin: 20px 40px; /* Margen para que no peguen con las orillas */
+            font-size: 2em; /* Tamaño de letra grande */
+            font-weight: bold; /* Letra gruesa */
+        }
+        .texto-der {
+            display: flex;
+            align-items: rigth;
+            margin: 20px 40px; /* Margen para que no peguen con las orillas */
+            font-size: 2em; /* Tamaño de letra grande */
+            font-weight: bold; /* Letra gruesa */
+        }
+
+        .texto-nina {
+            color: #ec4899; /* El color rosa de tu botón */
+        }
+
+        .texto-nino {
+            color: #3b82f6; /* El color azul de tu botón */
+        }
+        /* --- FIN ESTILOS TEXTOS --- */
         body {
             font-family: 'Dancing Script', cursive;
             background-color: #fdf2f8; /* Mismo rosa muy pálido */
@@ -156,11 +180,15 @@
         <img src="image_8.png" class="framed-image girl-baby" alt="Bebé niña">
         <img src="image_10.png" class="framed-image boy-boy" alt="Bebé niño">
         <p class="info">Es una sorpresa que no podemos esperar a compartir contigo!!</p>
-        <p class="info3">¿niñas</p>
+        
         <p class="info4">o</p>
-        <p class="info2">niños?</p>
+       
         <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
         <p class="info">Lugar: 4050 Pendleton Drive 77802 (Area de alberca)</p>
+    <div class="texto-izq">
+        <p class="info3">¿niñas</p>
+    <div class="texto-der">
+        <p class="info2">niños?</p>
 
         <div class="button-group">
             <a href="https://wa.me/19795613787" class="btn btn-rsvp">Confirmar Asistencia</a>
