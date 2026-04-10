@@ -106,6 +106,19 @@
         }
         /* --- FIN --- */
 
+        /* --- ESTILO PARA EL ULTRASONIDO --- */
+        .framed-ultrasound {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto 30px; /* Margen para espacio visual */
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
+            display: block; /* Para centrado perfecto */
+            object-fit: contain;
+        }
+        /* --- FIN ESTILO --- */
+
         .button-group {
             display: flex;
             justify-content: center;
@@ -159,6 +172,8 @@
         <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
         <p class="info">Lugar: 4050 Pendleton Drive 77802<br>(Área de alberca)</p>
         
+        <img src="ultrasonido.jpg" class="framed-ultrasound" alt="Nuestra Primera Foto Juntos">
+
         <div class="button-group">
             <a href="https://wa.me/19796613787" class="btn btn-rsvp">Confirmar Asistencia</a>
             <a href="https://maps.google.com/" class="btn btn-map">Ver Mapa</a>
