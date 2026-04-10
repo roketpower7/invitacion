@@ -91,6 +91,46 @@
             display: block; 
             object-fit: contain;
         }
+        /* --- ESTILOS DEL CARRUSEL DESLIZABLE --- */
+        .carrusel-contenedor {
+            width: 100%;
+            max-width: 320px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden; /* Corta lo que se salga de la caja */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border: 4px solid white; /* Un marquito blanco elegante */
+        }
+
+        .carrusel-track {
+            display: flex;
+            overflow-x: auto; /* Permite deslizar horizontalmente */
+            scroll-snap-type: x mandatory; /* Hace el efecto "imán" al deslizar */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Movimiento suave en iPhone */
+            scrollbar-width: none; /* Oculta la barra en Firefox */
+        }
+
+        .carrusel-track::-webkit-scrollbar {
+            display: none; /* Oculta la barra en Chrome/Safari */
+        }
+
+        .carrusel-img {
+            flex: 0 0 100%; /* Cada foto toma el 100% del espacio */
+            width: 100%;
+            height: 250px; /* Altura fija para que todas se vean parejas */
+            object-fit: cover; /* Recorta la foto sin aplastarla para que llene el cuadro */
+            scroll-snap-align: center; /* Centra la foto al soltar el dedo */
+        }
+        
+        .carrusel-instruccion {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-family: sans-serif; /* Letra normal para que se lea fácil */
+        }
+        /* --- FIN DEL CARRUSEL --- */
 
         /* --- NUEVA SECCIÓN DE REGALOS / EQUIPOS --- */
         .seccion-regalos {
@@ -175,7 +215,14 @@
         <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
         <p class="info">Lugar: 4050 Pendleton Drive 77802<br>(Área de alberca)</p>
         
-        <img src="ultrasonido.jpg" class="framed-ultrasound" alt="Nuestro Ultrasonido">
+        <div class="carrusel-contenedor">
+            <div class="carrusel-track">
+                <img src="foto1.jpg" class="carrusel-img" alt="Foto 1">
+                <img src="foto2.jpg" class="carrusel-img" alt="Foto 2">
+                <img src="foto3.jpg" class="carrusel-img" alt="Foto 3">
+            </div>
+        </div>
+        <p class="carrusel-instruccion">👈 Desliza para ver más fotos 👉</p>
 
         <div class="seccion-regalos">
             <div class="titulo-regalos">Elige tu equipo y sorpréndenos:</div>
