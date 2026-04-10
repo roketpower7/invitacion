@@ -20,83 +20,62 @@
             max-width: 450px;
             margin: auto;
             border-radius: 20px;
-            padding: 30px;
+            padding: 40px; /* Más padding para espacio visual */
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             border: 5px solid #fbcfe8; /* Mismo rosa */
+            position: relative; /* Importante para posicionar imágenes */
         }
 
         h1 {
             color: #5d4037;
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin: 50px 0 20px; /* Margen superior e inferior */
         }
 
-        /* --- NUEVO SISTEMA DE CAPAS PARA IMÁGENES --- */
-        .composition-area {
-            position: relative;
-            height: 300px; /* Altura para contener las imágenes escalonadas */
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .composition-grid {
+        /* --- SISTEMA DE ENMARCADO DE IMÁGENES --- */
+        .framed-image {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px;
-            pointer-events: none; /* Las imágenes no interfieren con el clic */
-        }
-
-        .composition-item {
-            max-width: 100%;
-            max-height: 100%;
             object-fit: contain;
             transition: transform 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); /* Profundidad sutil */
         }
 
-        /* Posiciones específicas para crear capas */
-        .item-mixed-bear { /* Oso globos mixtos (image_9.png) - Fondo Izquierda */
-            grid-column: 1;
-            grid-row: 1;
-            transform: translate(-15px, -15px) rotate(-5deg);
-            filter: blur(0.5px); /* Desenfoque sutil para el fondo */
-            opacity: 0.8;
+        /* Tamaños específicos para enmarcar (Pequeños para mobile) */
+        .bear-pink { /* image_9.png (Mixed Balloons) - Top Izquierda */
+            top: 10px;
+            left: 10px;
+            width: 70px;
+            transform: rotate(-10deg);
             z-index: 1;
         }
 
-        .item-blue-bear { /* Oso globos azules (image_11.png) - Fondo Derecha */
-            grid-column: 2;
-            grid-row: 1;
-            transform: translate(15px, -15px) rotate(5deg);
-            filter: blur(0.5px);
-            opacity: 0.8;
+        .bear-blue { /* image_11.png (Blue Balloons) - Top Derecha */
+            top: 10px;
+            right: 10px;
+            width: 70px;
+            transform: rotate(10deg);
             z-index: 1;
         }
 
-        .item-girl { /* Bebé niña (image_8.png) - Primer plano Izquierda */
-            grid-column: 1;
-            grid-row: 2;
-            transform: translate(0, 0) scale(1.1);
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2)); /* Sombra fuerte para profundidad */
+        .girl-baby { /* image_8.png (Sitting Girl) - Bottom Izquierda */
+            bottom: 80px;
+            left: -20px; /* Overlap sutil en el borde */
+            width: 90px;
+            transform: rotate(5deg);
             z-index: 2;
         }
 
-        .item-boy { /* Bebé niño (image_10.png) - Primer plano Derecha */
-            grid-column: 2;
-            grid-row: 2;
-            transform: translate(0, 0) scale(1.1);
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        .boy-boy { /* image_10.png (Crawling Boy) - Bottom Derecha */
+            bottom: 80px;
+            right: -20px;
+            width: 90px;
+            transform: rotate(-5deg);
             z-index: 2;
         }
-        /* --- FIN DEL SISTEMA DE CAPAS --- */
+        /* --- FIN DEL SISTEMA DE ENMARCADO --- */
 
         .info {
-            margin: 20px 0;
+            margin: 20px 60px; /* Más margen horizontal para limpiar el marco */
             font-size: 1.1em;
             line-height: 1.6;
         }
@@ -105,7 +84,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .btn {
@@ -138,20 +117,16 @@
     <div class="card">
         <h1>Invitación Gender Reveal</h1>
 
-        <div class="composition-area">
-            <div class="composition-grid">
-                <img src="image_9.png" class="composition-item item-mixed-bear" alt="Oso con globos rosas y cafés">
-                <img src="image_11.png" class="composition-item item-blue-bear" alt="Oso con globos azules">
-                <img src="image_8.png" class="composition-item item-girl" alt="Bebé niña">
-                <img src="image_10.png" class="composition-item item-boy" alt="Bebé niño">
-            </div>
-        </div>
+        <img src="image_9.png" class="framed-image bear-pink" alt="Oso con globos rosas y cafés">
+        <img src="image_11.png" class="framed-image bear-blue" alt="Oso con globos azules">
+        <img src="image_8.png" class="framed-image girl-baby" alt="Bebé niña">
+        <img src="image_10.png" class="framed-image boy-boy" alt="Bebé niño">
         <p class="info">¿Te sumas a la emoción de descubrir si es niña o niño?</p>
-        <p class="info">Sábado, 11 de Noviembre<br>4:00 PM</p>
-        <p class="info">Lugar: Area de alberca </p>
+        <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
+        <p class="info">Lugar: 4050 Pendleton Drive 77802 (Area de alberca)</p>
 
-       <div class="button-group">
-            <a href="https://wa.me/19795613787" class="btn btn-rsvp">Confirmar Asistencia</a>
+        <div class="button-group">
+            <a href="https://wa.me/119795613787" class="btn btn-rsvp">Confirmar Asistencia</a>
             <a href="https://maps.google.com/" class="btn btn-map">Ver Mapa</a>
         </div>
     </div>
