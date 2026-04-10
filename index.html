@@ -36,8 +36,10 @@
             margin: auto;
             border-radius: 20px;
             padding: 40px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Sombra un poquito más fuerte para resaltar */
-            border: 5px solid rgba(251, 207, 232, 0.8); /* Borde rosa también algo transparente */
+            border: 5px solid #B3EBF2; /* 1. Línea Azul Interior */
+            box-shadow: 0 0 0 5px #FFC5D3, /* 2. Línea Rosa Exterior (se dibuja pegada al borde azul) */
+            0 10px 25px 5px rgba(0,0,0,0.15); /* 3. La sombra para que resalte del fondo */
+            /* ----------------------------- */
             position: relative; 
         }
 
