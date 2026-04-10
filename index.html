@@ -27,13 +27,17 @@
         }
 
         .card {
-            background: white;
+            /* --- ESTO HACE LA MAGIA DE LA TRANSPARENCIA --- */
+            background: rgba(255, 255, 255, 0.85); /* 85% blanco, 15% transparente */
+            backdrop-filter: blur(4px); /* Difumina un poco el fondo detrás de la tarjeta */
+            /* ---------------------------------------------- */
+            
             max-width: 450px;
             margin: auto;
             border-radius: 20px;
             padding: 40px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 5px solid #fbcfe8; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Sombra un poquito más fuerte para resaltar */
+            border: 5px solid rgba(251, 207, 232, 0.8); /* Borde rosa también algo transparente */
             position: relative; 
         }
 
