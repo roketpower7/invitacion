@@ -32,15 +32,27 @@
         .card {
             background: rgba(255, 255, 255, 0); 
             backdrop-filter: blur(4px); 
-            width: 100%; /* Toma el ancho disponible... */
-            max-width: 450px; /* ...pero nunca pasa de 450px */
+            width: 100%; 
+            max-width: 450px; 
             margin: auto;
             border-radius: 20px;
-            padding: 30px 15px; /* Márgenes laterales más pequeños para cel */
+            
+            /* --- LA SOLUCIÓN: Zonas seguras --- */
+            /* 70px de espacio libre arriba, 15px a los lados, 110px de espacio libre abajo */
+            padding: 70px 15px 110px 15px; 
+            
             border: 5px solid #B3EBF2; 
             box-shadow: 0 0 0 5px #FFC5D3, 
                         0 10px 25px 5px rgba(0,0,0,0.15); 
             position: relative; 
+            z-index: 1; /* Estabiliza el renderizado en iOS */
+        }
+
+        /* --- BLINDAJE PARA IPHONE (SAFARI) --- */
+        /* Obliga a que los textos y botones siempre estén en la capa superior */
+        h1, .info, .pregunta-genero-apilada, .carrusel-contenedor, .seccion-regalos, .button-group {
+            position: relative;
+            z-index: 10;
         }
 
         h1 {
