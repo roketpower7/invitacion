@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,44 +9,36 @@
     <style>
         body {
             font-family: 'Dancing Script', cursive;
-            
-            /* --- CÓDIGO ACTUALIZADO PARA ESTE FONDO --- */
-            background-image: url('fondo_pastel.jpg'); /* Revisa que el nombre coincida */
+            background-image: url('fondo_pastel.jpg'); /* Tu fondo de nubes y estrellas */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Opcional, para efecto premium */
-            /* ------------------------------------------- */
-            
+            background-attachment: fixed;
             text-align: center;
             color: #5d4037; 
             margin: 0;
             padding: 20px;
-            
             display: flex;
             align-items: center;
             min-height: 100vh;
         }
 
         .card {
-            /* --- ESTO HACE LA MAGIA DE LA TRANSPARENCIA --- */
-            background: rgba(255, 255, 255, 0); /* 85% blanco, 15% transparente */
-            backdrop-filter: blur(4px); /* Difumina un poco el fondo detrás de la tarjeta */
-            /* ---------------------------------------------- */
-            
+            /* --- FONDO BLANCO TRANSPARENTE Y DOBLE BORDE --- */
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(4px); 
             max-width: 450px;
             margin: auto;
             border-radius: 20px;
             padding: 40px; 
             border: 5px solid #B3EBF2; /* 1. Línea Azul Interior */
-            box-shadow: 0 0 0 5px #FFC5D3, /* 2. Línea Rosa Exterior (se dibuja pegada al borde azul) */
-            0 10px 25px 5px rgba(0,0,0,0.15); /* 3. La sombra para que resalte del fondo */
-            /* ----------------------------- */
+            box-shadow: 0 0 0 5px #FFC5D3, /* 2. Línea Rosa Exterior */
+                        0 10px 25px 5px rgba(0,0,0,0.15); /* 3. Sombra */
             position: relative; 
         }
 
         h1 {
             color: #5d4037;
-            font-size: 4.5em; /* Ajustado para que quepa bien */
+            font-size: 3.5em; 
             margin: 30px 0 20px; 
         }
 
@@ -57,123 +50,94 @@
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); 
         }
 
-         .bear-pink{ /*niño*/
-            top: 10px;
-            left: 10px;
-            width: 100px;
-            transform: rotate(0deg);
-            z-index: 1;
-        }
-
-         .girl-baby{ /*niña*/
-            top: 10px;
-            right: 10px;
-            width: 100px;
-            transform: rotate(20deg);
-            z-index: 1;
-        }
-
-         .boy-boy{ /*oso rosa*/
-            bottom: 90px;
-            left: -20px; 
-            width: 110px;
-            transform: rotate(5deg);
-            z-index: 2;
-        }
-
-        .bear-blue { /*oso azul*/
-            bottom: 80px;
-            right: -20px;
-            width: 110px;
-            transform: rotate(-5deg);
-            z-index: 2;
-        }
+        .boy-boy { top: 10px; left: 10px; width: 70px; transform: rotate(-10deg); z-index: 1; }
+        .bear-pink { top: 10px; right: 10px; width: 70px; transform: rotate(20deg); z-index: 1; }
+        .girl-baby { bottom: 80px; left: -20px; width: 90px; transform: rotate(5deg); z-index: 2; }
+        .bear-blue { bottom: 80px; right: -20px; width: 90px; transform: rotate(-5deg); z-index: 2; }
         /* --- FIN DEL SISTEMA DE ENMARCADO --- */
 
         .info {
-            margin: 10px 30px; 
-            font-size: 2.2em;
-            line-height: 1;
+            margin: 15px 40px; 
+            font-size: 1.2em;
+            line-height: 1.5;
         }
 
-        /* --- NUEVO ESTILO PARA NIÑAS O NIÑOS --- */
-       /* --- NUEVO ESTILO APILADO --- */
+        /* --- ESTILO PARA NIÑAS O NIÑOS APILADO --- */
         .pregunta-genero-apilada {
             display: flex;
-            flex-direction: column; /* Apila los elementos de arriba hacia abajo */
-            width: 100%; /* Toma todo el ancho disponible */
+            flex-direction: column; 
+            width: 100%; 
             margin: 20px 0;
-            gap: 3px; /* Espacio vertical entre los renglones */
+            gap: 5px; 
         }
 
-        /* Alinear cada renglón */
-        .renglon-izquierdo {
-            text-align: left;
-        }
+        .renglon-izquierdo { text-align: left; }
+        .renglon-centro { text-align: center; }
+        .renglon-derecho { text-align: right; }
 
-        .renglon-centro {
-            text-align: center;
-        }
-
-        .renglon-derecho {
-            text-align: right;
-        }
-
-        /* Estilos de las letras (se mantienen igual, solo ajusté tamaños) */
-        .texto-nina {
-            font-size: 3.8em;
-            color: #FFC5D3; /* Rosa */
-            font-weight: bold;
-        }
-
-        .texto-o {
-            font-size: 4em;
-            color: #5d4037; /* Marrón */
-        }
-
-        .texto-nino {
-            font-size: 3.8em;
-            color: #B3EBF2; /* Azul */
-            font-weight: bold;
-        }
-        /* --- FIN --- */
-
-        .texto-nina {
-            font-size: 4.8em;
-            color: #FFC5D3; /* Rosa */
-            font-weight: bold;
-        }
-
-        .texto-o {
-            font-size: 2.2em;
-            color: #5d4037; /* Marrón */
-        }
-
-        .texto-nino {
-            font-size: 4.8em;
-            color: #B3EBF2; /* Azul */
-            font-weight: bold;
-        }
-        /* --- FIN --- */
+        .texto-nina { font-size: 2.8em; color: #FFC5D3; font-weight: bold; }
+        .texto-o { font-size: 2em; color: #5d4037; }
+        .texto-nino { font-size: 2.8em; color: #B3EBF2; font-weight: bold; }
+        /* --- FIN APILADO --- */
 
         /* --- ESTILO PARA EL ULTRASONIDO --- */
         .framed-ultrasound {
             width: 100%;
             max-width: 300px;
             height: auto;
-            margin: 20px auto 30px; /* Margen para espacio visual */
-            border-radius: 15px; /* Bordes redondeados */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave */
-            display: block; /* Para centrado perfecto */
+            margin: 20px auto 10px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            display: block; 
             object-fit: contain;
         }
-        /* --- FIN ESTILO --- */
+
+        /* --- NUEVA SECCIÓN DE REGALOS / EQUIPOS --- */
+        .seccion-regalos {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.6); 
+            border-radius: 15px;
+        }
+
+        .titulo-regalos {
+            font-size: 1.3em;
+            color: #5d4037;
+            margin-bottom: 12px;
+        }
+
+        .opciones-regalo {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .caja-regalo {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .regalo-nina {
+            background-color: rgba(255, 197, 211, 0.15); 
+            border: 2px dashed #FFC5D3;
+        }
+
+        .regalo-nino {
+            background-color: rgba(179, 235, 242, 0.15); 
+            border: 2px dashed #B3EBF2;
+        }
+        /* --- FIN SECCIÓN REGALOS --- */
 
         .button-group {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 25px;
+            position: relative;
+            z-index: 10; /* Asegura que los botones se puedan picar bien */
         }
 
         .btn {
@@ -186,52 +150,51 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .btn-rsvp {
-            background-color: #ec4899; 
-            color: white;
-        }
-
-        .btn-map {
-            background-color: #3b82f6; 
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.03);
-        }
+        .btn-rsvp { background-color: #ec4899; color: white; }
+        .btn-map { background-color: #3b82f6; color: white; }
+        .btn:hover { opacity: 0.9; transform: scale(1.03); }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>It's Twins!</h1>
 
-        <img src="image_9.png" class="framed-image bear-pink" alt="Oso con globos rosas y cafés">
-        <img src="image_11.png" class="framed-image bear-blue" alt="Oso con globos azules">
-        <img src="image_8.png" class="framed-image girl-baby" alt="Bebé niña">
-        <img src="image_10.png" class="framed-image boy-boy" alt="Bebé niño">
+        <img src="image_9.png" class="framed-image bear-pink" alt="Oso">
+        <img src="image_11.png" class="framed-image bear-blue" alt="Oso">
+        <img src="image_8.png" class="framed-image girl-baby" alt="Niña">
+        <img src="image_10.png" class="framed-image boy-boy" alt="Niño">
         
         <p class="info">¡Es una sorpresa que no podemos esperar a compartir contigo!</p>
         
-       <div class="pregunta-genero-apilada">
-            <div class="renglon-izquierdo">
-                <span class="texto-nina">¿niñas</span>
-            </div>
-            <div class="renglon-centro">
-                <span class="texto-o">Ó</span>
-            </div>
-            <div class="renglon-derecho">
-                <span class="texto-nino">niños?</span>
-            </div>
+        <div class="pregunta-genero-apilada">
+            <div class="renglon-izquierdo"><span class="texto-nina">¿niñas</span></div>
+            <div class="renglon-centro"><span class="texto-o">o</span></div>
+            <div class="renglon-derecho"><span class="texto-nino">niños?</span></div>
         </div>
 
         <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
         <p class="info">Lugar: 4050 Pendleton Drive 77802<br>(Área de alberca)</p>
         
-        <img src="ultrasonido.jpg" class="framed-ultrasound" alt="Nuestra Primera Foto Juntos">
+        <img src="ultrasonido.jpg" class="framed-ultrasound" alt="Nuestro Ultrasonido">
+
+        <div class="seccion-regalos">
+            <div class="titulo-regalos">Elige tu equipo y sorpréndenos:</div>
+            <div class="opciones-regalo">
+                <div class="caja-regalo regalo-nina">
+                    <strong>Equipo Niñas 🩷</strong><br><br>
+                    Pañales<br>
+                    Prendas unisex
+                </div>
+                <div class="caja-regalo regalo-nino">
+                    <strong>Equipo Niños 💙</strong><br><br>
+                    Toallitas<br>
+                    Prendas unisex
+                </div>
+            </div>
+        </div>
 
         <div class="button-group">
-            <a href="https://wa.me/19796613787" class="btn btn-rsvp">Confirmar Asistencia</a>
+            <a href="https://wa.me/19795613787" class="btn btn-rsvp">Confirmar Asistencia</a>
             <a href="https://maps.google.com/" class="btn btn-map">Ver Mapa</a>
         </div>
     </div>
