@@ -80,16 +80,31 @@
         }
 
         /* --- NUEVO ESTILO PARA NIÑAS O NIÑOS --- */
-        .pregunta-genero {
+       /* --- NUEVO ESTILO APILADO --- */
+        .pregunta-genero-apilada {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px; /* Espacio entre las palabras */
+            flex-direction: column; /* Apila los elementos de arriba hacia abajo */
+            width: 100%; /* Toma todo el ancho disponible */
             margin: 20px 0;
+            gap: 5px; /* Espacio vertical entre los renglones */
         }
 
+        /* Alinear cada renglón */
+        .renglon-izquierdo {
+            text-align: left;
+        }
+
+        .renglon-centro {
+            text-align: center;
+        }
+
+        .renglon-derecho {
+            text-align: right;
+        }
+
+        /* Estilos de las letras (se mantienen igual, solo ajusté tamaños) */
         .texto-nina {
-            font-size: 5.8em;
+            font-size: 2.8em;
             color: #FFC5D3; /* Rosa */
             font-weight: bold;
         }
@@ -100,7 +115,25 @@
         }
 
         .texto-nino {
-            font-size: 5.8em;
+            font-size: 2.8em;
+            color: #B3EBF2; /* Azul */
+            font-weight: bold;
+        }
+        /* --- FIN --- */
+
+        .texto-nina {
+            font-size: 4.8em;
+            color: #FFC5D3; /* Rosa */
+            font-weight: bold;
+        }
+
+        .texto-o {
+            font-size: 2em;
+            color: #5d4037; /* Marrón */
+        }
+
+        .texto-nino {
+            font-size: 4.8em;
             color: #B3EBF2; /* Azul */
             font-weight: bold;
         }
@@ -163,10 +196,16 @@
         
         <p class="info">¡Es una sorpresa que no podemos esperar a compartir contigo!</p>
         
-        <div class="pregunta-genero">
-            <span class="texto-nina">¿niñas</span>
-            <span class="texto-o">o</span>
-            <span class="texto-nino">niños?</span>
+       <div class="pregunta-genero-apilada">
+            <div class="renglon-izquierdo">
+                <span class="texto-nina">¿niñas</span>
+            </div>
+            <div class="renglon-centro">
+                <span class="texto-o">o</span>
+            </div>
+            <div class="renglon-derecho">
+                <span class="texto-nino">niños?</span>
+            </div>
         </div>
 
         <p class="info">Sábado, 11 de Abril<br>4:00 PM</p>
